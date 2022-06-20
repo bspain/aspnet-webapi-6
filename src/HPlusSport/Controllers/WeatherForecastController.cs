@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace src.Controllers;
+namespace HPlusSport.API.Controllers;
 
 [ApiController]
 [Route("[controller]")]

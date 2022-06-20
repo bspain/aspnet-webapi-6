@@ -1,4 +1,4 @@
-namespace src;
+namespace HPlusSport.API;
 
 public class WeatherForecast
 {
