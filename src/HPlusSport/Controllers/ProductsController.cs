@@ -44,6 +44,7 @@ namespace HPlusSport.API.Controllers
 
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(Product product) {
+            
             this._context.Products.Add(product);
             await this._context.SaveChangesAsync();
 
