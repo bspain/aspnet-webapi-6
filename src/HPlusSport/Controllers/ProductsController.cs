@@ -41,5 +41,16 @@ namespace HPlusSport.API.Controllers
             }
             return Ok(product);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Product>> PostProduct(Product product) {
+            this._context.Products.Add(product);
+            await this._context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                "GetProduct",
+                new { id = product.Id},
+                product);
+        } 
     }
 }
