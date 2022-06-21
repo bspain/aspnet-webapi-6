@@ -15,6 +15,7 @@ namespace HPlusSport.API.Controllers
 
             _context.Database.EnsureCreated();
         }
+
         // [HttpGet]
         // public IEnumerable<Product> GetAllProducts() {
         //     return this._context.Products.ToArray();
@@ -22,6 +23,15 @@ namespace HPlusSport.API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Product>> GetAllProducts() {
             return Ok(this._context.Products.ToArray());
+        }
+
+        [HttpGet, Route("{id}")]
+        public ActionResult<Product> GetProduct(int id) {
+            var product = _context.Products.Find(id);
+            if (product == null) {
+                return NotFound();
+            }
+            return Ok(product);
         }
     }
 }
